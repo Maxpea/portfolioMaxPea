@@ -1,0 +1,113 @@
+<div class="parent">
+    <div class="custom-shape-divider-top-1651047884">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+    <div class="grid-en-tete">  
+        Encadrement des loyers à Paris
+    </div>
+    <div class="grid-map-wrapper">
+        <div class="map-border">
+            <div id="map">
+            </div>
+        </div>
+    </div>
+    <div class="grid-bandeau-gauche">
+    </div>
+    <div class="grid-bandeau-droit">
+    </div>
+    <div class="grid-pied">
+        <br><br>
+        <p>Plus d'infos : </p>
+        <ul>
+            <li><a target="_blank"
+                    href="https://opendata.paris.fr/explore/dataset/logement-encadrement-des-loyers/information"> 
+                    base de donneé utilisée</a></li>
+            <li> <a target="_blank"
+                    href="https://www.paris.fr/pages/l-encadrement-des-loyers-parisiens-en-vigueur-le-1er-aout-2712">
+                    l'encadrement des loyers, comment ça marche ?</a></li>
+            </ul>
+    </div>
+    <div class="formulaire" id="formulaire">
+        <form #connect="ngForm" (ngSubmit)="voirLoyer(connect.value)">
+            <fieldset>
+                <legend>Epoque de construction</legend>
+                <div>
+                    <input type="radio" id="epoque1" name="epoque" value="Avant 1946" ngModel="" required>
+                    <label for="epoque1"> &nbsp;avant 1946 <span style="padding-left:30px;"></span> </label>
+
+                    <input type="radio" id="epoque2" name="epoque" value="1946-1970" ngModel="">
+                    <label for="epoque2">&nbsp;1946-1970</label><br>
+
+                    <input type="radio" id="epoque3" name="epoque" value="1971-1990" ngModel="">
+                    <label for="epoque3">&nbsp;1971-1990 <span style="padding-left:30px;"></span> </label>
+
+                    <input type="radio" id="epoque4" name="epoque" value="Apres 1990" ngModel="">
+                    <label for="epoque3">&nbsp;après 1990</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Type de location</legend>
+                <div>
+                    <input type="radio" id="meuble" name="typLoc" value="meublé" ngModel="">
+                    <label for="epoque1">&nbsp;meublée <span style="padding-left:30px;"></span></label>
+
+                    <input type="radio" id="nonMeuble" name="typLoc" value="non meublé" ngModel="">
+                    <label for="epoque2">&nbsp;non meublée</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Nombre de pièces</legend>
+                <div>
+                    <input type="radio" id="1p" name="pieces" value="1" ngModel="">
+                    <label for="epoque1">&nbsp;1<span style="padding-left:30px;"></span></label>
+
+                    <input type="radio" id="2p" name="pieces" value="2" ngModel="">
+                    <label for="epoque2">&nbsp;2<span style="padding-left:30px;"></span></label>
+
+                    <input type="radio" id="3p" name="pieces" value="3" ngModel="">
+                    <label for="epoque2">&nbsp;3<span style="padding-left:30px;"></span></label>
+
+                    <input type="radio" id="4p" name="pieces" value="4" ngModel="">
+                    <label for="epoque2">&nbsp;4<span style="padding-left:30px;"></span></label>
+                </div>
+            </fieldset>
+            <button type="submit">Voir loyer</button>
+        </form>
+        <div class="resultLoyer" id="loyersQuartier">
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th class="tg-l8kr"></th>
+                        <th class="tg-jjtw">Loyer 2019<br>€/m²</th>
+                        <th class="tg-jjtw">Loyer 2020<br>€/m²</th>
+                        <th class="tg-jjtw">Loyer 2021<br>€/m²</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tg-l8kr">Min</td>
+                        <td class="tg-jjtw">{{loyerQuartier2.min}}</td>
+                        <td class="tg-jjtw">{{loyerQuartier1.min}}</td>
+                        <td class="tg-jjtw">{{loyerQuartier0.min}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-l8kr">Moy</td>
+                        <td class="tg-jjtw">{{loyerQuartier2.ref}}</td>
+                        <td class="tg-jjtw">{{loyerQuartier1.ref}}</td>
+                        <td class="tg-jjtw">{{loyerQuartier0.ref}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-l8kr">Max</td>
+                        <td class="tg-l8kr">{{loyerQuartier2.max}}</td>
+                        <td class="tg-l8kr">{{loyerQuartier1.max}}</td>
+                        <td class="tg-l8kr">{{loyerQuartier0.max}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
