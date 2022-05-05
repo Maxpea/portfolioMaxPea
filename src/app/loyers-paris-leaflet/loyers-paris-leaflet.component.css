@@ -1,3 +1,4 @@
+/*défintion de la grille parente*/
 .parent {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -11,11 +12,12 @@
   right: 0;
   left: 0;
   top: 0;
-  font-family: lora;
-  background:#b4a696;
+  font-family: Avenir, sans-serif;
+  background: #b4a696;
 
 }
 
+/*mise en forme du SVG décoratif en haut de page*/
 .custom-shape-divider-top-1651047884 {
   z-index: 1;
   position: absolute;
@@ -38,10 +40,11 @@
   fill: #ffffff72;
 }
 
+/*en-tete de page*/
 .grid-en-tete {
   z-index: 5;
+  font: var(--dark-green);
   grid-area: 1 / 2 / 2 / 8;
-  font-weight: bold;
   grid-auto-columns: 6fr;
   font-size: xx-large;
   display: flex;
@@ -49,33 +52,35 @@
   align-content: center;
   flex-direction: column;
   text-align: center;
+  text-transform: uppercase;
 }
 
+/*pied de page*/
 .grid-pied {
-  grid-area: 6 / 2 / 7 / 8;
+  grid-area: 6 / 4 / 7 / 8;
   font-weight: bold;
   grid-auto-columns: 6fr;
   font-size: large;
   display: flex;
   justify-content: center;
   align-content: center;
+  padding: 5px 0px 40px 0px;
+
 }
 
-a{
-  color:rgb(51, 47, 47);
-  text-decoration: underline;
-}
-
+/*bandeau gauche*/
 .grid-bandeau-gauche {
   grid-area: 1 / 1 / 7 / 2;
   top: 0;
   left: 0;
 }
 
+/*bandeau droit*/
 .grid-bandeau-droit {
   grid-area: 1 / 8 / 7 / 9;
 }
 
+/*placement de la map dans la grille*/
 .grid-map-wrapper {
   grid-area: 2 / 4 / 6 / 8;
   width: 100%;
@@ -84,11 +89,11 @@ a{
 }
 
 .map-border {
-  border: 5px solid var(--dark-green);
+  border: 2px solid var(--dark-green);
   width: 100%;
   height: 100%;
   opacity: 1;
-  border-radius: 50px;
+
 }
 
 #map {
@@ -96,21 +101,68 @@ a{
   width: 100%;
   z-index: 6;
   opacity: 1;
-  border-radius: 50px;
+
 }
 
-
-.formulaire {
-  position: absolute;
+/*div formulaire*/
+.formulaireAndResults {
+  display: inline-flex;
+  flex-direction: column;
   z-index: 10;
-  height: fit-content;
-  background-color: aliceblue;
-  grid-area: 2 / 2 / 4 / 3;
-  border-radius: 50px;
-  border: 5px solid var(--dark-green);
+  height: 93.5%;
+  width: 98%;
+  background-color: #f3ece487;
+  grid-area: 2 / 2 / 7/ 4;
+  border: 2px solid var(--dark-green);
   text-align: center;
+  margin-bottom: 40px;
+  align-items: center;
+  justify-content: center;
+ 
+}
+/*pour formulaire*/
+legend {
+  color: var(--dark-green);
+  font-size: 1,5em;
+  text-align: center;
+  font-weight: bold;
+}
+/*pour formulaire*/
+label {
+  color: var(--dark-green);
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+/*pour formulaire*/
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+ 
 }
 
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 5px 10px;
+    font-family: sans-serif, Arial;
+    font-size: 0.8em;
+    border: 1px solid var(--dark-green);
+    margin-bottom: 20px;
+}
+
+.radio-toolbar label:hover {
+  background-color: var(--light-green)
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 2px var(--dark-green)
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: var(--dark-green);
+}
 
 
 .tg {
@@ -134,7 +186,7 @@ a{
 }
 
 .tg th {
-  background-color: #3b558f;
+  background-color: var(--dark-green);
   border-color: #aaa;
   border-style: solid;
   border-width: 1px;
@@ -162,6 +214,88 @@ a{
   text-align: center;
   vertical-align: top
 }
+
+button {
+  display: inline-flex;
+  height: fit-content;
+  width: 90%;
+  border: 1px solid var(--dark-green);
+  color: var(--dark-green);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: var(--light-green)
+}
+
+.button {
+  display: inline-flex;
+  height: 100%;
+  width: 90%;
+  border: 2px solid var(--dark-green);
+  color: var(--dark-green);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+h1 {
+  color: var(--dark-green);
+  text-decoration: overline;
+  font-size: 1em;
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+a {
+  color: var(--dark-green);
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#button-4 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-4 a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+.underline {
+  width: 100%;
+  height: 100%;
+  margin-top: 15px;
+  align-self: flex-end;
+  left: -100%;
+  background: #BFC0C0;
+  position: absolute;
+  transition: all .3s ease-Out;
+  bottom: 0;
+}
+
+#button-4:hover .underline {
+  left: 0;
+}
+
+
+
 
 @media only screen and (max-width: 768px) {
   [class*="grid-"] {
