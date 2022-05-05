@@ -158,7 +158,11 @@ export class LoyersParisLeafletComponent implements AfterViewInit {
               })
             )
           });
-          quartiersLayer.bindPopup(this.clickMarkerPopup(this.quartiers.records[index]));
+          var customOptions =
+          {
+            'className': 'label'
+          }
+          quartiersLayer.bindPopup(this.clickMarkerPopup(this.quartiers.records[index]),customOptions);
           /*
           quartiersLayer.on('click', function (e) {
             let formulaire = document.getElementById("formulaire");
@@ -179,15 +183,9 @@ export class LoyersParisLeafletComponent implements AfterViewInit {
 
   clickMarkerPopup(data: any) {
     return `` +
-      `<div> <font size="5">  Quartier choisi : <b id="nomQuartier">${data.fields.l_qu}<b> </font> </div>`
+      `<div><font size="4">  Quartier : <b id="nomQuartier">${data.fields.l_qu}<b> </font> </div>`
   }
-/*
-  hideForm() {
-    let formulaire = document.getElementById("formulaire");
-    formulaire!.style.display = "none"
 
-  }
-*/
 
 
   voirLoyer(loyer: any) {
