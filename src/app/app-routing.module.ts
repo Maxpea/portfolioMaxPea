@@ -6,6 +6,7 @@ import { LoyersParisLeafletComponent } from './loyers-paris-leaflet/loyers-paris
 const routes: Routes = [
   {component: LoyersParisLeafletComponent, path:"loyers-paris-leaflet"},
   {component: HomeComponent, path:"home"},
+  { path: "", redirectTo: "home",pathMatch: 'full' }
 
 
 ];
