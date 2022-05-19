@@ -32,7 +32,6 @@
   background: #232323;
   border-radius: 20px;
   overflow: hidden;
-  
 }
 
 .container .card:before {
@@ -42,24 +41,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--dark-green);
+  background: #344a39;
   clip-path: circle(120px at 80% 20%);
   transition: 0.5s ease-in-out;
 }
 
-.container #gitHub:hover:before {
+.container .card:hover:before {
   clip-path: circle(300px);
-  background: #24292F;
-}
-
-.container #codinGame:hover:before {
-  clip-path: circle(300px);
-  background: #24292F;
-}
-
-.container #cssBattle:hover:before {
-  clip-path: circle(300px);
-  background: #24292F;
+  background: #183444;
 }
 
 .container #codinGame:after {
@@ -118,8 +107,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
+
 }
+
+.container #gitHub .imgBx img {
+  width:60%;
+}
+
+.container #codinGame .imgBx img {
+  border:5px black;
+  width:60%;
+  border-radius: 50%;
+  
+}
+
+.container #cssBattle .imgBx img {
+  width:70%;
+}
+
 
 .container .card .contentBx {
   position: absolute;
@@ -201,22 +206,22 @@
 .container .card .contentBx .color span {
   width: 20px;
   height: 20px;
-  background: #ff0;
+  background: rgb(255, 94, 0);
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
 }
 
 .container .card .contentBx .color span:nth-child(2) {
-  background: #9bdc28;
+  background: #614e1a;
 }
 
 .container .card .contentBx .color span:nth-child(3) {
-  background: #03a9f4;
+  background: #C0C0C0;
 }
 
 .container .card .contentBx .color span:nth-child(4) {
-  background: #e91e63;
+  background: #ffd700;
 }
 
 .container .card .contentBx a {
