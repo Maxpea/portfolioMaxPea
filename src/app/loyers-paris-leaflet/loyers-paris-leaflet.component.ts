@@ -112,7 +112,6 @@ export class LoyersParisLeafletComponent implements AfterViewInit {
 
   private resetFeature(e: any) {
     const layer = e.target;
-
     layer.setStyle({
       weight: 1,
       opacity: 1,
@@ -122,14 +121,13 @@ export class LoyersParisLeafletComponent implements AfterViewInit {
     });
   }
 
-
-
   addMarkerAndLayersQuartiers() {
     this.http.get('https://opendata.paris.fr/api/records/1.0/search/?dataset=quartier_paris&q=&rows=80').subscribe({
       next: (data) => {
         this.quartiers = data;
         //console.log(this.quartiers.records)
         for (let index in this.quartiers.records) {
+          //fonction pour ajouter des marqueurs ci-desous
           /*const lat = this.quartiers.records[index].fields.geom_x_y[0];
           const lng = this.quartiers.records[index].fields.geom_x_y[1];
           const marker = L.marker([lat, lng]);

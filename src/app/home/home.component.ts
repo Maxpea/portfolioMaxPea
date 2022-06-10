@@ -13,7 +13,7 @@ htmlData:any;
   constructor() { }
 
   ngOnInit(): void {
-/*
+/* fonction de webscrapping ci-dessous
     this.htmlData=this.FetchPage("https://www.codingame.com/profile/87d78b40758ce6fafda74f50afe159fa0702984")
     console.log(this.htmlData)
   }

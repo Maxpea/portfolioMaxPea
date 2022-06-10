@@ -14,7 +14,6 @@
   top: 0;
   font-family: Avenir, sans-serif;
   background: #b4a696;
-
 }
 
 /*mise en forme du SVG décoratif en haut de page*/
@@ -118,8 +117,8 @@
   margin-bottom: 40px;
   align-items: center;
   justify-content: center;
- 
 }
+
 /*pour formulaire*/
 legend {
   color: var(--dark-green);
